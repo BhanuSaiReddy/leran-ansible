@@ -1,4 +1,4 @@
--- name: MongoDB setup
+- name: MongoDB setup
   hosts: all
   become: yes
   tasks:
@@ -24,3 +24,4 @@
         name: Mongod
         state: restarted
         enabled: yes
+
