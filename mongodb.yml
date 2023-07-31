@@ -3,16 +3,15 @@
   become: yes
   tasks:
 
-    - name: install mongodb
-      ansible.builtin.yum:
-        name: mongodb-org
-        state: present
-      become: true
-
     - name: copy mongodb repo file
       ansible.builtin.copy:
-        src: mongodb.repo
-        dest: /etc/yum.repos.d/mongodb.repo
+          src: mongodb.repo
+          dest: /etc/yum.repos.d/mongodb.repo
+
+    - name: Install MongoDB
+      ansible.builtin.yum:
+        name: mongodb-org
+        state: installed
 
 
     - name: Update listen address in Mongodb Configuration
