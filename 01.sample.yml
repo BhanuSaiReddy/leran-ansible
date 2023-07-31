@@ -1,8 +1,8 @@
-- name: Install Ngnix
+- name: INstall Ngnix
   hosts: WEB
   become: true
   tasks:
-    -name: Installl Ngnix
+    -name: Installl ngnix
     ansible.builtin.yum:
       name: httpd
       state: latest
