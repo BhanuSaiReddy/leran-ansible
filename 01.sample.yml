@@ -14,7 +14,7 @@
         enabled: yes
 
 - name: INstall Nginx
-  hosts: WEB
+  hosts: web_Servers
   become: true
   roles:
     - sample
