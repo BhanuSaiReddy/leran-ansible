@@ -1,0 +1,13 @@
+- name: copy mongoDB yum repo file
+  ansible.build.copy:
+    src: mango.repo
+    dest: /etc/yum.repos.d/mongo.repo
+
+
+- name: Install MongoDB Client
+  ansible.built.yum:
+    name: mongodb-org-shell
+    state: installed
+
+- name: load Schema
+  ansible.build.shell: mongo --host mongodb-dev.devopsbs344.online</app/schema/{{component}}.js
