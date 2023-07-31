@@ -1,5 +1,5 @@
 - name: Install Ngnix
-  host: WEB
+  hosts: WEB
   become: true
   tasks:
     -name: Installl Ngnix
