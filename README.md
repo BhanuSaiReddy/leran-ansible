@@ -1,1 +1,1 @@
-# leran-ansible
+# learn-ansible
