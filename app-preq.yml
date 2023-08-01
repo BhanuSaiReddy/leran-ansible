@@ -3,8 +3,6 @@
     name: roboshop
 
 
-
-
 - name: Clean Old app content
   ansible.builtin.file:
     path: /app
@@ -16,7 +14,7 @@
     state: directory
 
 
-- name: Download and extarct the application content
+- name: Download and extract the application content
   ansible.builtin.unarchive:
     src: https://roboshop-artifacts.s3.amazonaws.com/{{component}}.zip
     dest: /app
