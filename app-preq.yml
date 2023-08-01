@@ -1,21 +1,23 @@
--name: Add application user
- ansible.builtin.user:
-   name: roboshop
+- name: Add application user
+  ansible.builtin.user:
+    name: roboshop
+    # This ensures the user is created if not exists, you can use 'absent' to delete the user
 
 
--name: Clean Old app content
+
+- name: Clean Old app content
   ansible.builtin.file:
     path: /app
     state: absent
 
--name: create App directory
+- name: create App directory
   ansible.builtin.file:
-    path:/app
+    path: /app
     state: directory
 
-- name: Download and extarct the application content
-   ansible.builtin.unarchive:
-     src: https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
-     dest: /app
-     remote_src: yes
 
+- name: Download and extarct the application content
+  ansible.builtin.unarchive:
+    src: https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
+    dest: /app
+    remote_src: yes
