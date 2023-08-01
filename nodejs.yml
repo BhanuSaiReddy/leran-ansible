@@ -3,21 +3,23 @@
     src: mongo.repo
     dest: /etc/yum.repos.d/mongo.repo
 
+
 - name: Install NodeJS Repos
   ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
+
 
 - name: Install NodeJS
   ansible.builtin.yum:
     name: nodejs
     state: installed
 
-- name: App pre-requisites
+- name: App pre-requisities
   ansible.builtin.import_tasks: app-preq.yml
 
-- name: Download Node.js Dependencies
+- name: Download Nodejs Dependencies
   ansible.builtin.shell: npm install
   args:
     chdir: /app
 
-- name: Setup Application Schema (Assuming a different task file app-schema.yml)
-  ansible.builtin.import_tasks: app-schema.yml
+- name: Schema Setup
+  ansible.builtin.import_tasks: app-preq.yml
