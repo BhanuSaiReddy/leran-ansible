@@ -1,6 +1,6 @@
 - name: copy mongoDB yum repo file
   ansible.build.copy:
-    src: mango.repo
+    src: mongo.repo
     dest: /etc/yum.repos.d/mongo.repo
 
 
