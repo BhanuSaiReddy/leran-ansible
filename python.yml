@@ -9,14 +9,11 @@
 - name: App pre-requisities
   ansible.builtin.import_tasks: app-preq.yml
 
-- name: Download python Dependencies
+- name: Download Python Dependencies
   ansible.builtin.shell: pip3.6 install -r requirements.txt
   args:
     chdir: /app
 
-#- name: Schema Setup
- # ansible.builtin.import_tasks: mysql-schema.yml
-  #when: schema is defined
 
 - name: SystemD Setup
   ansible.builtin.import_tasks: Systemd-setup.yml
