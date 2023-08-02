@@ -7,8 +7,7 @@
     state: installed
 
 - name: App pre-requisites
-  import_tasks: app-preq.yml
-
+  ansible.builtin.import_tasks: app-preq.yml
 
 - name: Download Python Dependencies
   ansible.builtin.shell: pip3.6 install -r requirements.txt
